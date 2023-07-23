@@ -1,13 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper {
+    background-color: #000;
+    width:100vw;
+    height:100vh;
 }
+
+.moon {
+    
+    scale: 10%;
+    position: absolute;
+    top:-60%;
+}
+
+.earth {
+    scale: 10%;
+    position: absolute;
+    top: 20%;
+    animation: rotateAnimation 2s linear infinite;
+}
+
+.ship {
+    scale: 5%;
+    position: absolute;
+    top: 5%
+}
+
+.penguin {
+    position: absolute;
+    top: 20%;
+    left: 48%;
+    opacity: 0;
+}
+
+.toEarth {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ce2121;
+    text-align: center;
+    line-height: 200px;
+    cursor: pointer;
+}
+
+.toMoon {
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #3a28dd;
+    text-align: center;
+    line-height: 200px;
+    cursor: pointer;
+}
+
+.flyMoon {
+    transform: translateY(-1000%);
+    opacity: 0;
+    transition: 2s ease-out;
+}
+
+.flyEarth {
+    transform: translateY(1000%);
+    opacity: 1;
+    transition: 2s ease-out;
+}
+
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotateY(0deg);
+    }  
+    100% {
+        transform: rotateY(360deg);
+    }
+  }
